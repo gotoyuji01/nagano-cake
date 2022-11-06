@@ -1,29 +1,24 @@
 Rails.application.routes.draw do
   scope module: :public do
-    #get 'addresses/index'
-    #get 'addresses/edit'
-
-  
-    #get 'orders/new'
-    #get 'orders/index'
-    #get 'orders/show'
-    #get 'orders/complete'
-  
-  
-    #get 'cart_items/index'
-  
-  
-    #get 'customers/show'
-    #get 'customers/edit'
-    #get 'customers/unsubscribe'
-
-  
-    #get 'items/index'
-    #get 'items/show'
-    resources :items,only:[:index,:show]
-  
     root 'homes#top'
     get '/about' => 'homes#about', as: 'about'
+    
+    resources :items,only:[:index,:show]
+    
+    get '/customers/my_page' => 'customers#show'
+    get '/customers/information/edit' => 'customers#edit'
+    patch '/customers/information' => 'customers#update'
+    get '/customers/unsubscribe' => 'customers#unsubscribe'
+    patch '/customers/withdraw' => 'customers#withdraw'
+    
+    resources :cart_items,only:[:index,:create,:update,:destroy]
+    delete '/cart_items/destroy_all' => 'cart_items#destroy_all'
+    
+    resources :orders,only:[:new,:index,:create,:show]
+    post '/orders/confirm' => 'orders#confirm'
+    get '/orders/complete' => 'orders#complete'
+    
+    resources :addresses,only:[:index,:edit,:create,:update,:destroy]
   
   end
   
