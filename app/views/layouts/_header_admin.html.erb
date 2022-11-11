@@ -1,0 +1,32 @@
+<div class= "admin-header">
+  <div class= "admin-nav-bars">
+      <nav class="nav navbar-brand navbar-left header-logo">   
+      <%= link_to admin_root_path,class:"header-logo-letter" do %><%= image_tag('logo.png', class: 'admin_shop_logo') %><% end %>
+    </nav>
+    <nav class="nav navbar-nav">
+      <span class="adjust"> 
+      </span>
+    </nav>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to admin_items_path,class:"admin-nav-item" do %><i class="glyphicon glyphicon-user users"></i>&emsp;商品一覧<% end %>
+        </li>
+        <li class="">
+          <%= link_to admin_customers_path,class:"admin-nav-item" do %><i class="glyphicon glyphicon-home home"></i>&emsp;会員一覧<% end %>
+        </li>
+        <li>
+          <%= link_to admin_root_path,class:"admin-nav-item" do %><i class="glyphicon glyphicon-book books"></i>&emsp;注文履歴一覧<% end %>
+        </li>
+        <li class="">
+          <%= link_to admin_genres_path,class:"admin-nav-item" do %><i class="glyphicon glyphicon-home home"></i>&emsp;ジャンル一覧<% end %>
+        </li>
+        <li>
+          <%= link_to destroy_admin_session_path,class:"admin-nav-item", method: :delete do %><i class="glyphicon glyphicon-log-out logout"></i>&emsp;ログアウト<% end %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <%# 検索フォーム %>
+  <%#<%= render 'admins/searches/search' %>
+</div>

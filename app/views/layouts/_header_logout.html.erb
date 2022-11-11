@@ -1,0 +1,20 @@
+<nav class="nav navbar-brand navbar-left header-logo">
+  <%= link_to root_path,class:"header-logo-letter" do %> <%= image_tag('logo.png', class: 'shop_logo') %><% end %>
+</nav>
+<nav class="nav navbar-nav">
+  <span class="adjust"> 
+  </span>
+</nav>
+<nav>
+  <ul class="nav navbar-nav navbar-right">
+    <li>
+    <%= link_to items_path ,class:"nav-item" do %><i class="glyphicon glyphicon-cutlery"></i>&emsp;商品一覧<% end %>
+    </li>
+    <li>
+      <%= link_to new_customer_registration_path ,class:"nav-item" do %><i class="glyphicon glyphicon-edit"></i>&emsp;新規登録<% end %>
+    </li>
+    <li>
+      <%= link_to new_customer_session_path ,class:"nav-item" do %><i class="glyphicon glyphicon-log-in"></i>&emsp;ログイン<% end %>
+    </li>
+  </ul>
+</nav>
