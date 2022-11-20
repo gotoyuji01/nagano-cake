@@ -5,7 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
@@ -31,13 +32,13 @@
         <%= yield %>
       </div>
     </main>
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-xs-5 col-xs-offset-9">
-            <p>CopyRight nagano-cafe.inc shop-logo made by <a href="https://www.designevo.com/jp/logo-maker/" title="無料オンラインロゴメーカー">DesignEvo</a> </>
-          </div>
-        </div>
-      </div>
-    </footer> 
+    <!--<footer>-->
+      <!--<div class="container">-->
+        <!--<div class="row">-->
+          <!--<div class="col-xs-5 col-xs-offset-9">-->
+            <!--<p>CopyRight nagano-cafe.inc shop-logo made by <a href="https://www.designevo.com/jp/logo-maker/" title="無料オンラインロゴメーカー">DesignEvo</a> </>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</footer> -->
   </body>

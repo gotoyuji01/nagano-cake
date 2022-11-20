@@ -1,2 +1,43 @@
-<h1>Public::Homes#top</h1>
-<p>Find me in app/views/public/homes/top.html.erb</p>
+<div class="row login-row">
+	<div class="col-xs-3">
+		<%#<%= render 'genre_serch_form', genres: @genres %>
+    </div>
+    <div class="col-xs-9">
+    	<div>
+				<%= image_tag("top.png", class: "top_image") %>
+				<div class="main-visual">
+					<p class="main-visual-text">
+						ようこそ、ながのCAKEへ！<br>
+						このサイトは、ケーキ販売のECサイトになります。<br>
+						会員でない方も商品の閲覧はできますが、<br>
+						購入には会員登録が必要になります。
+					</p>
+				</div>
+			</div>
+    	<div class="recommend">
+    		<h2>新着商品</h2>
+    		<% @items.each do |item| %>
+			    <div class="product-box">
+			    	<table class="table">
+			    		<tr>
+					    	<th><%= link_to item_path(item) do %>
+							<%#<%= attachment_image_tag(item, :image,size: "180x130", fallback: "no_image.jpg") %>
+							<%= image_tag item.get_image(180,130) %>
+							<% end %>
+						    </th>
+							</tr>
+							<tr>
+								<th><%= link_to item.name, item_path(item) %></th>
+							</tr>
+							<tr>
+									<th>￥<%= (item.price * 1.1).to_i %></th>
+							</tr>
+						</table>
+			    </div>
+		    <% end %>
+    	</div>
+    </div>
+    <div class="index-link">
+        <%= link_to "全ての商品を見る>", items_path %>
+    </div>
+</div>

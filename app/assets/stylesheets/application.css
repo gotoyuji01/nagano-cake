@@ -13,3 +13,173 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets"; 
+ @import "bootstrap";     
+
+ /* 全体 */
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   color:#666;
+   font-family: "ヒラギノ丸ゴ Pro W4","Nunito","Yu Gothic", "游ゴシック", YuGothic, "游ゴシック体", sans-serif;
+ }
+ .clearfix::after {
+   content: "";
+   display: block;
+   clear: both;
+ }
+ .main-container {
+   margin-top: 100px;
+   padding-top: 30px;
+ }
+ footer{
+   margin-top: 50px;
+ }
+/* ログイン中 */
+.login-row{
+  margin-top: 50px;
+}
+ /* ヘッダー */
+ header{
+  /*//  background-color: #95D8C1;*/
+     background-color: rgb(245, 245, 159);
+ }
+ .header-logo{
+   font-weight: bold;
+   font-size:40px;
+   padding-top: 6px;
+ }
+ .shop_logo{
+   width:50%;
+ }
+ .header-logo-letter{
+  color:#B72025;
+  /*hover{*/
+    /*color:#B72025;*/
+    /*text-decoration:none;*/
+  /*}*/
+ }
+ .nav-item,.admin-nav-item{
+   color:#B72025;
+   font-size:15px;
+   height:70px;
+   /*&:hover{*/
+    /*color:#B72025;*/
+  /*}*/
+ }
+ .glyphicon-cutlery,.glyphicon-edit,.glyphicon-log-in,.glyphicon-home,.glyphicon-user,.glyphicon-book,.glyphicon-log-out{
+  color:#B72025;
+ }
+ .navbar-nav li a{
+  line-height: 40px;
+ }
+ .client-name{
+  display:inline-block;
+  font-size: 20px;
+  padding-top:20px;
+  padding-left:30%;
+  width:350px;
+  color:#B72025;
+ }
+ @media (max-width: 767px) {
+  .main-container {
+    margin-top: 250px;
+  }
+  .nav-item{
+     height:40px;
+   }
+   .header-logo{
+     display:block;
+     width: 100%;
+     margin-bottom: 15px;
+   }
+   .shop_logo{
+    width:180px;
+  }
+   .client-name{
+   padding-left:30px;
+  }
+  .adjust{
+    display:inline-block;
+  }
+ }
+ /* ログイン中 */
+ .login_shop_logo{
+  width: 80%;
+  margin-top: 10px;
+ }
+ @media (max-width: 767px) {
+  .login_shop_logo{
+    width:180px;
+   }
+   .login-client-name {
+    padding-top: 50px;
+}
+  }
+
+/* マイページ編集画面 */
+.withdrawal_page_btn{
+  position: relative;
+  bottom: 33px;
+  left: 200px;
+}
+
+/* 退会ページ */
+.withdrawal_text{
+  text-align:center;
+  margin: 30px;
+  position: relative;
+  right: 220px;
+}
+/* 管理者 */
+.admin-header{
+height:100px;
+}
+.admin_shop_logo
+{
+  width:70%;
+  margin-top: 7px;
+}
+.search-window{
+  height:30px;
+  width:50%;
+  margin-left:auto;
+  margin-bottom:20px;
+}
+@media (max-width: 990px) {
+   .admin-nav-item{
+      font-size:8px;
+      height:40px;
+    }
+    .search-window{
+     width:100%;
+   }
+   .admin_shop_logo{
+     width:150px;
+    }
+}
+@media (max-width: 767px) {
+  .admin-header{
+   height: 330px;
+  }
+  .main-container {
+    margin-top: 330px;
+  }
+  .admin-nav-item{
+     font-size:15px;
+     height:40px;
+   }
+   .search-window{
+    width:100%;
+  }
+  .admin_shop_logo{
+    width:180px;
+   }
+ }
+
+/* 管理者側商品新規作成 */
+.quantity-select-form{
+  width:100px;
+}
