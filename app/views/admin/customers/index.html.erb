@@ -20,7 +20,7 @@
 						<%= link_to customer.last_name, admin_customer_path(customer.id) %>
 					</td>
 	  				<td> <%= customer.email %></td>
-					<td><% if customer.is_deleted == nil %>
+					<td><% if customer.is_deleted == false %>
 					        有効
 					    <% else %>
 					        退会

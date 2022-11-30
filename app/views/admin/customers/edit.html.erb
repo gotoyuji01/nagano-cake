@@ -47,13 +47,10 @@
 				 <div class="field">
 				 	<!-- デフォルトで顧客の現在ステータスに合わせてラジオボタンの初期値を設定するためのif文 -->
 				    <%= f.label :会員ステータス %><br>
-				    <% if @customer.is_deleted == nil %>
-				    	<label><%= f.radio_button :is_deleted,  {value: ""}, {checked: true} %>有効</label>
-				 		　<label><%= f.radio_button :is_deleted, value: Time.now %>退会</label>
-				 	　<% else %>
-				 		　<label><%= f.radio_button :is_deleted,  value: "" %>有効</label>
-				 		　<label><%= f.radio_button :is_deleted, {value: Time.now}, {checked: true} %>退会</label>
-				 	　<% end %>
+				    <%= f.radio_button :is_deleted, false %>
+				    <%= f.label :is_deleted, '有効', value: false %>
+				    <%= f.radio_button :is_deleted, true %>
+				    <%= f.label :is_deleted, '退会', value: true %>
 				 </div>
 
 				    <%= f.submit "編集内容を保存する", class: "btn btn-primary"%>
