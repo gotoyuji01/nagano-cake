@@ -11,12 +11,14 @@ Rails.application.routes.draw do
     get '/customers/unsubscribe' => 'customers#unsubscribe'
     patch '/customers/withdraw' => 'customers#withdraw'
     
+    delete '/cart_items/destroy_all' => 'cart_items#destroy_all', as: 'destroy_all'
     resources :cart_items,only:[:index,:create,:update,:destroy]
-    delete '/cart_items/destroy_all' => 'cart_items#destroy_all'
     
-    resources :orders,only:[:new,:index,:create,:show]
+    
     post '/orders/confirm' => 'orders#confirm'
     get '/orders/complete' => 'orders#complete'
+    resources :orders,only:[:new,:index,:create,:show]
+    
     
     resources :addresses,only:[:index,:edit,:create,:update,:destroy]
   

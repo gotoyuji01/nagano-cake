@@ -110,7 +110,7 @@ ActiveRecord::Schema.define(version: 2022_11_06_053328) do
     t.integer "order_id", null: false
     t.integer "price", null: false
     t.integer "amount", null: false
-    t.integer "making_status", null: false
+    t.integer "making_status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -123,7 +123,7 @@ ActiveRecord::Schema.define(version: 2022_11_06_053328) do
     t.integer "shipping_cost", null: false
     t.integer "total_payment", null: false
     t.integer "payment_method", null: false
-    t.integer "order_status", null: false
+    t.integer "order_status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
