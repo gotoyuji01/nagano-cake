@@ -1,44 +1,34 @@
-<div class="row">
-  <h2>注文履歴詳細</h2>
-  <div style="margin-top: 50px;">
-    <table class="table">
-      <tbody>
-        <tr>
-          <th scope="row">購入者</th>
-          <td><%=link_to @order.customer.first_name + @order.customer.last_name , admin_customer_path(@order.customer.id) %></td>
-        </tr>
-        <tr>
-          <th scope="row">注文日</th>
-          <td><%= @order.created_at.strftime('%Y/%m/%d') %></td>
-        </tr>
-        <tr>
-          <th scope="row">配送先</th>
-          <td>
-            <p><%= @order.postal_code %><%= @order.address %></p>
-            <p><%= @order.name %></p>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">支払方法</th>
-          <td><%= @order.payment_method_i18n %></td>
-        </tr>
-        <tr>
-          <th scope="row">注文ステータス</th>
-          <td>
+<h2>注文履歴詳細</h2>
+  <div class="row" style="margin-top: 50px;">    
+    <div class="col-2 font-weight-bold">購入者</div>
+    <div class="col-5"><%=link_to @order.customer.first_name + @order.customer.last_name , admin_customer_path(@order.customer.id) %></div>
+  </div>
+  <div class="row" style="margin-top: 5px;">
+    <div class="col-2 font-weight-bold">注文日</div>
+    <div class="col-5"><%= @order.created_at.strftime('%Y/%m/%d') %></div>
+  </div>
+  <div class="row" style="margin-top: 5px;">
+    <div class="col-2 font-weight-bold">配送先</div>
+    <div class="col-5">〒<%= @order.postal_code %><%= @order.address %></br>
+                         <%= @order.name %></div>
+  </div>
+  <div class="row" style="margin-top: 5px;">
+    <div class="col-2 font-weight-bold">支払方法</div>
+    <div class="col-5"><%= @order.payment_method_i18n %></div>
+  </div>
+  <div class="row" style="margin-top: 5px;">
+    <div class="col-2 font-weight-bold">注文ステータス</div>
+    <div class="col-5">
             <%#<%= form_with(model: @order, url: admin_orders_order_status_path, method: :patch, local: true) do |f| %>
               <%#<%= f.select :order_status, Order.order_statuses.keys.to_a, {} %>
               <%#<%= f.hidden_field :id, :value => @order.id %>
               <%#<%= f.submit "更新",class:"btn btn-primary" %>
             <%#<% end %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    </div>
   </div>
-</div>
 
 <div class="row">
-  <div class="col-xs-8"style="margin-top: 50px;">
+  <div class="col-7"style="margin-top: 50px;">
     <table class="table table-bordered">
       <thead>
         <tr class="table-head" style="background-color:#F5F5F5;">
@@ -70,22 +60,19 @@
       </tbody>
     </table>
   </div>
-  <div class="col-xs-4"style="margin-top: 120px;">
-    <table class="table">
-      <tbody>
-        <tr>
-          <th scope="row">商品合計</th>
-          <td><%= @sum %></td>
-        </tr>
-        <tr>
-          <th scope="row">送料</th>
-          <td><%= @order.shipping_cost %></td>
-        </tr>
-        <tr>
-          <th scope="row">請求金額合計</th>
-          <td><%= @sum + @order.shipping_cost %></td>
-        </tr>
-      </tbody>
-    </table>
+  
+  <div class="col-4"style="margin: auto auto 0 auto;">
+    <div class="row">
+      <div class="col-4 font-weight-bold">商品合計</div>
+      <div class="col-4"><%= @sum %>円</div>
+    </div>
+    <div class="row">
+      <div class="col-4 font-weight-bold">送料</div>
+      <div class="col-4"><%= @order.shipping_cost %>円</div>
+    </div>
+    <div class="row">
+      <div class="col-4 font-weight-bold">請求金額合計</div>
+      <div class="col-4 font-weight-bold"><%= @sum + @order.shipping_cost %>円</div>
+    </div>
   </div>
 </div>

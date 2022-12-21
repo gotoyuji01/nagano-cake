@@ -1,13 +1,13 @@
-<div class=“row login-row"”>
+<div class="text-center">
 	<div class="col-xs-offset-5" style="margin-top: 20vh; margin-bottom: 20vh;">
 			<h3>本当に退会しますか？</h3>
 
-			<div class = "withdrawal_text">退会すると、会員登録情報や
+			<h4 style = "margin:30px 0 50px 0;">退会すると、会員登録情報や
 				<br>これまでの購入履歴が閲覧できなくなります。
 				<br>退会する場合は、「退会する」をクリックしてください。
-			</div>
+			</h4>
 
-			<%= link_to "退会しない", customers_my_page_path(@customer),  class: "btn btn-primary"%>&ensp;
+			<%= link_to "退会しない", customers_my_page_path(@customer),  class: "btn btn-primary"%>&ensp;&ensp;&ensp;&ensp;
 			<%= link_to "退会する", customers_withdraw_path(@customer), method: :patch, data: {confirm: "本当に退会してもよろしいですか？"}, class: "btn btn-danger" %>
 	</div>
 </div>

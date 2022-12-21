@@ -1,72 +1,48 @@
-<div class="row login-row">
+
   <h2>注文情報入力</h2>
-  <div class="col-xs-12" style="margin-top: 50px;">
+  <div class="" style="margin-top: 20px;">
     <%= form_with model: @order, url: "/orders/confirm", method: :post, local: true do |f| %>
-      <table class="table">
-        <tbody>
-          <tr>
-            <th scope="row">支払方法</th>
-            <td>
-              <div class="radio">
-                <%#<%= f.radio_button :payment_method, 0 %>
-                <%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
-                <!--<label class="payment-label"> クレジットカード</label>-->
-                <label class="payment-label">
-                  <%= f.label :payment_method_credit_card, Order.payment_methods_i18n[:credit_card] %>
-                </label>
-                <%#<%= f.radio_button :payment_method, 1 %>
-                <%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
-                <!--<label class="payment-label">銀行振込</label>-->
-                <label class="payment-label">
-                  <%= f.label :payment_method_transfer, Order.payment_methods_i18n[:transfer]%>
-                </label>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">お届け先</th>
-            <td>        
-              <div class="radio">
-                <%= f.radio_button :address_option, 0, checked: "checked" %> 
-                <%= f.label :order_address, "ご自身の住所" %>
-                <p>&emsp;〒<%= current_customer.postal_code %> <%= current_customer.address %></p>
-                <p>&emsp;<%= current_customer.first_name %><%= current_customer.last_name %></p>
-              </div>
+      <h4>支払方法</h4>
+      <div>
+        &emsp;<%= f.radio_button :payment_method, Order.payment_methods.key(0) %>
+        <%= f.label :payment_method_credit_card, Order.payment_methods_i18n[:credit_card] %></br>
+        &emsp;<%= f.radio_button :payment_method, Order.payment_methods.key(1) %>
+        <%= f.label :payment_method_transfer, Order.payment_methods_i18n[:transfer]%>
+      </div>
+  
+      <h4 style="margin-top:10px;">お届け先</h4>
+      <div>
+        &emsp;<%= f.radio_button :address_option, 0, checked: "checked" %> 
+        <%= f.label :order_address, "ご自身の住所" %>
+        <p style="margin:0 0 0 30px;">〒<%= current_customer.postal_code %> <%= current_customer.address %></p>
+        <p style="margin-left:30px;"><%= current_customer.first_name %><%= current_customer.last_name %></p>
+      </div>
               
-              <div class="radio">
-                <%= f.radio_button :address_option, 1 %>
-                <%= f.label :order_address, "登録済住所から選択" %>
-                <p>&emsp;
-                <%= f.collection_select :customer_id, @addresses, :id, :full_addresses, prompt: "住所を選択してください" %>
-                </p>
-              </div>
+      <div>
+        &emsp;<%= f.radio_button :address_option, 1 %>
+        <%= f.label :order_address, "登録済住所から選択" %>
+        <p style="margin-left:30px;"><%= f.collection_select :customer_id, @addresses, :id, :full_addresses, prompt: "住所を選択してください" %></p>
+      </div>
               
-              <div class="radio">
-                <%= f.radio_button :address_option, 2 %>
-                <%= f.label :order_address, "新しいお届け先" %>
-                <div class="field">
-                 <label class="postal-code-label">
-                  <%= f.label :postal_code, "郵便番号(ハイフンなし)" %></label>
-                  <%= f.text_field :postal_code, autofocus: true, class:""%>
-                </div>
-                <div class="field">
-                 <label class="address-label">
-                  <%= f.label :address, "住所" %></label>
-                  <%= f.text_field :address, autofocus: true, class:"", size:"60*60"%>
-                </div>
-                <div class="field">
-                 <label class="address-label">
-                  <%= f.label :name, "宛名" %></label>
-                  <%= f.text_field :name, autofocus: true, class:"", size:"30*30" %>
-                </div>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <div class="col-xs-offset-5">
-        <%= f.submit "確認画面へ進む",class:"btn btn-primary col-xs-3 " %>
+      <div>
+        &emsp;<%= f.radio_button :address_option, 2 %>
+        <%= f.label :order_address, "新しいお届け先" %>
+        <p style="margin-left:30px;">
+          <%= f.label :postal_code, "郵便番号(ハイフンなし)" %>
+          <%= f.text_field :postal_code, autofocus: true, class:""%>
+        </p>
+        <p style="margin-left:30px;">
+          <%= f.label :address, "住所" %>
+          <%= f.text_field :address, autofocus: true, class:"", size:"60*60"%>
+        </p>
+        <p style="margin-left:30px;">
+          <%= f.label :name, "宛名" %>
+          <%= f.text_field :name, autofocus: true, class:"", size:"30*30" %>
+        </p>
+      </div>
+      
+      <div class="text-center">
+        <%= f.submit "確認画面へ進む",class:"btn btn-primary col-xs-3" %>
       </div>
     <% end %>
   </div>
-</div>

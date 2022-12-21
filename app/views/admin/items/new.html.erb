@@ -1,37 +1,36 @@
-<div class="row">
+
     <h2>商品新規登録</h2>
+    
+    <div style="margin-top:20px;">
     <%= form_with(model: @item, url: admin_items_path, method: :post, local: true) do |f| %>
-        <div class="col-xs-5">
-        	<div class="field">
-        		<%= f.label :商品画像 %>
-                <%= f.file_field :image %>
-        	</div>
+        <div class="row">
+        	<div class="col-2"><%= f.label :商品画像 %></div>
+            <div class="col-5"><%= f.file_field :image %></div>
         </div>
-        <div class="col-xs-7">
-            <div class="field">
-            	<%= f.label :商品名 %>
-            	<%= f.text_field :name, class: "form" %>
+        <div class="row" style="margin-top:5px;">
+            <div class="col-2"><%= f.label :商品名 %></div>
+            <div class="col-5"><%= f.text_field :name, class: "form" %></div>
             </div>
-            <div class="field">
-            	<%= f.label :商品説明 %>
-            	<%= f.text_area :introduction %>
-            </div>
-            <div class="field">
-            	<%= f.label :税抜価格 %>
-            	<%= f.text_field :price %>
-            	円
-            </div>
-            <div class="field">
-            	<%= f.radio_button :is_active, true %>
-            	<%= f.label :is_active, "販売中" %>
-                <%= f.radio_button :is_active, false %>
-                <%= f.label :is_active, "販売停止中" %>
-            </div>
-            <div class="actions row">
-            <%#<%= f.hidden_field :id, :value => @item.id %>
-    		<%= f.submit "新規登録",class:"btn btn-primary col-xs-12" %>
-            </div>
+        <div class="row" style="margin-top:5px;">
+            <div class="col-2"><%= f.label :商品説明 %></div>
+            <div class="col-5"><%= f.text_area :introduction %></div>
+        </div>
+        <div class="row" style="margin-top:5px;">
+            <div class="col-2"><%= f.label :税抜価格 %></div>
+            <div class="col-5"><%= f.text_field :price %>円</div>
+        </div>
+        <div class="row" style="margin-top:5px;">
+            <div class="col-2"><%= f.label :販売ステータス %></div>
+            <div class="col-5"><%= f.radio_button :is_active, true %>
+            	                                         <%= f.label :is_active, "販売中" %>
+                                                         <%= f.radio_button :is_active, false %>
+                                                         <%= f.label :is_active, "販売停止中" %></div>
+        </div>
+        <div class="row">
+          <%#<%= f.hidden_field :id, :value => @item.id %>
+          <div class="col-2"></div>
+    	  <div class="col-5" style="margin-top:10px;"><%= f.submit "新規登録",class:"btn btn-success" %></div>
         </div>
     <% end %>
-</div>
+    </div>
 

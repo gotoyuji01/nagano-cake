@@ -1,23 +1,24 @@
-<nav class="nav navbar-brand navbar-left header-logo">
-  <%= link_to root_path,class:"header-logo-letter" do %> <%= image_tag('logo.png', class: 'shop_logo') %><% end %>
-</nav>
-<nav class="nav navbar-nav">
-  <span class="adjust"> 
-  </span>
-</nav>
-<nav>
-  <ul class="nav navbar-nav navbar-right">
+<div class= "row">
+  <div class= "col-6">
+   <nav class="nav navbar-brand navbar-left header-logo">
+    <%= link_to root_path,class:"header-logo-letter" do %> <%= image_tag('logo.png', class: 'shop_logo') %><% end %>
+   </nav>
+  </div>
+
+  <div class= "col-6">
+   <ul class="navbar navbar-expand-lg navbar-right navbar-nav ml-auto">
     <li>
-    <%= link_to about_path ,class:"nav-item" do %><i class="glyphicon glyphicon-cutlery"></i>&emsp;About<% end %>
-    </li>
+    <%= link_to about_path ,class: "btn btn-outline-primary" do %>About<% end %>
+    </li>&emsp;
     <li>
-    <%= link_to items_path ,class:"nav-item" do %><i class="glyphicon glyphicon-cutlery"></i>&emsp;商品一覧<% end %>
-    </li>
+    <%= link_to items_path ,class: "btn btn-outline-primary" do %>商品一覧<% end %>
+    </li>&emsp;
     <li>
-      <%= link_to new_customer_registration_path ,class:"nav-item" do %><i class="glyphicon glyphicon-edit"></i>&emsp;新規登録<% end %>
-    </li>
+      <%= link_to new_customer_registration_path ,class: "btn btn-outline-primary" do %>新規登録<% end %>
+    </li>&emsp;
     <li>
-      <%= link_to new_customer_session_path ,class:"nav-item" do %><i class="glyphicon glyphicon-log-in"></i>&emsp;ログイン<% end %>
+      <%= link_to new_customer_session_path ,class: "btn btn-outline-primary" do %>ログイン<% end %>
     </li>
-  </ul>
-</nav>
+   </ul>
+  </div>
+</div>

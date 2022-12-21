@@ -9,8 +9,9 @@
     <%= stylesheet_pack_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  
   <body>
-    <header class="navbar navbar-fixed-top">
+    <header>
       <div class="container">
         <% if customer_signed_in? %>
             <%= render 'layouts/header_customer' %>

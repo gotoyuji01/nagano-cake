@@ -1,24 +1,32 @@
- <nav class="nav navbar-brand navbar-left header-logo">
+<div class= "row">
+  <div class= "col-5">
+   <nav class="nav navbar-brand navbar-left header-logo">
     <%= link_to root_path,class:"header-logo-letter" do %> <%= image_tag('logo.png', class: 'login_shop_logo') %><% end %>
-</nav>
- <nav class="nav navbar-nav">
-  <span class="customer-name  login-customer-name">
-    ようこそ、<%= current_customer.first_name %><%= current_customer.last_name %>さん！
-  </span>
-  </nav>
-  <nav>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="">
-        <%= link_to customers_my_page_path,class:"nav-item" do %><i class="glyphicon glyphicon-home home"></i>&emsp;マイページ<% end %>
-      </li>
+   </nav>
+  </div>
+  
+  <div class= "col-2">
+   <nav class="nav navbar-nav">
+    <span class="customer-name  login-customer-name">
+     ようこそ、<%= current_customer.first_name %>さん！
+    </span>
+   </nav>
+  </div>
+  
+  <div class= "col-5">
+    <ul class="navbar navbar-expand-lg navbar-right navbar-nav ml-auto">
       <li>
-        <%= link_to items_path,class:"nav-item" do %><i class="glyphicon glyphicon-user users"></i>&emsp;商品一覧<% end %>
-      </li>
+        <%= link_to customers_my_page_path,class: "btn btn-outline-primary" do %>マイページ<% end %>
+      </li>&emsp;
       <li>
-        <%= link_to cart_items_path,class:"nav-item" do %><i class="glyphicon glyphicon-book books"></i>&emsp;カート<% end %>
-      </li>
+        <%= link_to items_path,class: "btn btn-outline-primary" do %>商品一覧<% end %>
+      </li>&emsp;
       <li>
-        <%= link_to destroy_customer_session_path,class:"nav-item", method: :delete do %><i class="glyphicon glyphicon-log-out logout"></i>&emsp;ログアウト<% end %>
+        <%= link_to cart_items_path,class: "btn btn-outline-primary" do %>カート<% end %>
+      </li>&emsp;
+      <li>
+        <%= link_to destroy_customer_session_path,class: "btn btn-outline-primary", method: :delete do %>ログアウト<% end %>
       </li>
     </ul>
-  </nav>
+  </div>
+</div>

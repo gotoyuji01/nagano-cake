@@ -17,6 +17,11 @@
 @import "bootstrap-sprockets"; 
  @import "bootstrap";     
 
+
+ul{
+ list-style: none;
+}
+
  /* 全体 */
  * {
    margin: 0;
