@@ -9,9 +9,9 @@ class Customer < ApplicationRecord
   has_many :orders, dependent: :destroy
   
   # is_deletedがfalseならtrueを返すようにしている
-  #def active_for_authentication?
-    #super && (is_deleted == false)
-  #end
+  def active_for_authentication?
+    super && (is_deleted == false)
+  end
   
          
 end
